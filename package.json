@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wymsee/cordova-imageResizer.git"
+    "url": "git+https://github.com/javerd/cordova-imageResizer.git"
   },
   "keywords": [
     "cordova",
@@ -26,10 +26,10 @@
       "version": ">=3.0.0"
     }
   ],
-  "author": "Wymsee",
+  "author": "javerd",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wymsee/cordova-imageResizer/issues"
+    "url": "https://github.com/javerd/cordova-imageResizer/issues"
   },
-  "homepage": "https://github.com/wymsee/cordova-imageResizer#readme"
+  "homepage": "https://github.com/javerd/cordova-imageResizer#readme"
 }
