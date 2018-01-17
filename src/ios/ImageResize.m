@@ -14,7 +14,7 @@
 
 #import "ImageResize.h"
 #import "UIImage+Scale.h"
-#import "NSData+Base64.h"
+//#import "NSData+Base64.h"
 #import "CDVFile.h"
 
 @implementation ImageResize
@@ -104,7 +104,7 @@
             imageDataObject = UIImagePNGRepresentation(scaledImage);
         }
         
-        NSString *encodedString = [imageDataObject base64EncodingWithLineLength:0];
+        NSString *encodedString = [imageDataObject base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
         NSDictionary* result = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:encodedString, newWidthObj, newHeightObj, nil] forKeys:[NSArray arrayWithObjects: @"imageData", @"width", @"height", nil]];
         
         if (encodedString != nil) {
@@ -124,7 +124,7 @@
     //Load the image
     UIImage *img = nil;
     if([imageDataType isEqualToString:@"base64Image"]==YES) {
-        img = [[UIImage alloc] initWithData:[NSData dataWithBase64EncodedString:imageData]];
+        img = [[UIImage alloc] initWithData:[[NSData alloc] initWithBase64EncodedString:imageData options:0]];
     } else {
         img = [[UIImage alloc] initWithData:[NSData dataWithContentsOfFile:[self getUrl:imageData]]];
     }
